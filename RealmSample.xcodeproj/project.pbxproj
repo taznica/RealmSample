@@ -16,7 +16,9 @@
 		8709AFDD20EDB7250054AD34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8709AFDB20EDB7250054AD34 /* LaunchScreen.storyboard */; };
 		8709AFE820EDB7250054AD34 /* RealmSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8709AFE720EDB7250054AD34 /* RealmSampleTests.swift */; };
 		8709AFF320EDB7250054AD34 /* RealmSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8709AFF220EDB7250054AD34 /* RealmSampleUITests.swift */; };
+		87347A2D21007D7800E8B9D5 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87347A2C21007D7800E8B9D5 /* AddViewController.swift */; };
 		D3853F2B45702CD9BB857601 /* Pods_RealmSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4517662BDEC45F5F71ED134F /* Pods_RealmSampleTests.framework */; };
+		D53F7F70CCA9A1C66D80D0B0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53F70A95CB6082EC3D24059 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +58,9 @@
 		8709AFEE20EDB7250054AD34 /* RealmSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealmSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8709AFF220EDB7250054AD34 /* RealmSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSampleUITests.swift; sourceTree = "<group>"; };
 		8709AFF420EDB7250054AD34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87347A2C21007D7800E8B9D5 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		98B7B0628182A660FA6B72CD /* Pods-RealmSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmSampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealmSampleTests/Pods-RealmSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D53F70A95CB6082EC3D24059 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		E3E512C53F86BF805456C1F8 /* Pods-RealmSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmSampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RealmSampleUITests/Pods-RealmSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F186D5AB5A5E674344417336 /* Pods_RealmSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,6 +137,8 @@
 				8709AFD920EDB7250054AD34 /* Assets.xcassets */,
 				8709AFDB20EDB7250054AD34 /* LaunchScreen.storyboard */,
 				8709AFDE20EDB7250054AD34 /* Info.plist */,
+				87347A2C21007D7800E8B9D5 /* AddViewController.swift */,
+				D53F70A95CB6082EC3D24059 /* Task.swift */,
 			);
 			path = RealmSample;
 			sourceTree = "<group>";
@@ -379,6 +385,8 @@
 			files = (
 				8709AFD520EDB7240054AD34 /* ViewController.swift in Sources */,
 				8709AFD320EDB7240054AD34 /* AppDelegate.swift in Sources */,
+				87347A2D21007D7800E8B9D5 /* AddViewController.swift in Sources */,
+				D53F7F70CCA9A1C66D80D0B0 /* Task.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
