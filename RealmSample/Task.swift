@@ -21,6 +21,11 @@ class Task: Object {
     }
 
 
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+
+
     func add() {
         try! Task.realm.write({
             Task.realm.add(self)
