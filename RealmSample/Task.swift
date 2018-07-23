@@ -16,7 +16,7 @@ class Task: Object {
 
     convenience init(value: String) {
         self.init()
-//        self.id =
+        self.id = self.lastId()
         self.value = value
     }
 
@@ -53,5 +53,15 @@ class Task: Object {
         try! Task.realm.write({
             Task.realm.delete(task)
         })
+    }
+
+
+    func lastId() -> Int {
+        if let last = Task.realm.objects(Task.self).last {
+            return last.id + 1
+        }
+        else {
+            return 1
+        }
     }
 }
