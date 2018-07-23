@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var table: UITableView!
 
@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
         super.viewDidLoad()
 
         table.dataSource = self
+        table.delegate = self
     }
 
 
@@ -38,7 +39,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
-        // TODO: count
     }
 
 
@@ -47,6 +47,27 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
         cell?.textLabel?.text = tasks[indexPath.row].value
 
         return cell!
+    }
+
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete: UITableViewRowAction = UITableViewRowAction(style: .destructive, title: "delete", handler: {(action, indexPath) in
+
+            let task: Task = Task.realm.objects(Task.self)[indexPath.row]
+
+            try! Task.realm.write {
+                Task.realm.delete(task)
+            }
+
+            self.read()
+        })
+
+        return [delete]
     }
 }
 
