@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
+class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var table: UITableView!
 
@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
 
 
     func read() {
-        tasks = task.read()
+        tasks = task.readAll()
         table.reloadData()
     }
 
@@ -69,5 +69,44 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
 
         return [delete]
     }
-}
 
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.goToUpdateView()
+    }
+
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addViewController = segue.destination as! AddViewController
+
+        switch segue.identifier {
+            case "add":
+                addViewController.viewType = .add
+            
+            case "update":
+                let tasks = self.task.readAll()
+                let task = tasks[(table.indexPathForSelectedRow?.row)!]
+                
+                addViewController.viewType = .update
+                addViewController.task = task
+            
+            default:
+                break
+        }
+    }
+
+
+    func goToAddView() {
+        self.performSegue(withIdentifier: "add", sender: nil)
+    }
+
+
+    func goToUpdateView() {
+        self.performSegue(withIdentifier: "update", sender: nil)
+    }
+
+
+    @IBAction func didSelectAddButton() {
+        self.goToAddView()
+    }
+}

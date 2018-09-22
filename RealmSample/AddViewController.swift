@@ -8,22 +8,54 @@
 
 import UIKit
 
+
+enum ViewType {
+    case add
+    case update
+}
+
+
 class AddViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var textField: UITextField!
+    @IBOutlet var button: UIButton!
+
+    var task: Task!
+
+    var viewType: ViewType = .add
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
-    @IBAction func didSelectAdd() {
+        if viewType == .update {
+            textField.text = task.value
+            button.setTitle("Update", for: .normal)
+        }
+    }
+
+    @IBAction func didSelectButton() {
         guard let value = textField.text else {
             return
         }
 
-        self.addTask(value: value)
-        self.goBack()
+        switch viewType {
+            case .add:
+                self.addTask(value: value)
+            
+            case .update:
+                self.updateTask(value: value)
+        }
+
+        self.goToListView()
+    }
+    
+    
+    @IBAction func didSelectBackButton() {
+        self.goToListView()
     }
 
 
@@ -33,7 +65,12 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-    func goBack() {
+    func updateTask(value: String) {
+        task.update(task: task, value: value)
+    }
+
+
+    func goToListView() {
         self.navigationController?.popViewController(animated: true)
     }
 

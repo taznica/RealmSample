@@ -33,7 +33,7 @@ class Task: Object {
     }
 
 
-    func read() -> [Task] {
+    func readAll() -> [Task] {
         let tasks = Task.realm.objects(Task.self).sorted(byKeyPath: "id", ascending: true)
         var list: [Task] = []
 
