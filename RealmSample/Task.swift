@@ -14,6 +14,7 @@ class Task: Object {
     @objc dynamic var value: String = ""
 
 
+    // 初期化を行う
     convenience init(value: String) {
         self.init()
         self.id = self.lastId()
@@ -21,18 +22,20 @@ class Task: Object {
     }
 
 
+    // idをプライマリキーに設定する
     override class func primaryKey() -> String? {
         return "id"
     }
 
 
+    // taskを追加する
     func add() {
         try! Task.realm.write({
             Task.realm.add(self)
         })
     }
 
-
+    // taskを全件取得する
     func readAll() -> [Task] {
         let tasks = Task.realm.objects(Task.self).sorted(byKeyPath: "id", ascending: true)
         var list: [Task] = []
@@ -45,6 +48,7 @@ class Task: Object {
     }
 
 
+    // taskを更新する
     func update(task: Task, value: String) {
         try! Task.realm.write({
             task.value = value
@@ -52,6 +56,7 @@ class Task: Object {
     }
 
 
+    // taskを削除する
     func delete(id: Int) {
         let task = Task.realm.objects(Task.self)[id]
 
@@ -61,6 +66,7 @@ class Task: Object {
     }
 
 
+    // taskの最新idを取得する
     func lastId() -> Int {
         if let last = Task.realm.objects(Task.self).last {
             return last.id + 1
