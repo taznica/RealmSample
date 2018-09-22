@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
+class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var table: UITableView!
 
