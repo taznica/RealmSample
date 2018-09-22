@@ -17,7 +17,7 @@ class Task: Object {
     // 初期化を行う
     convenience init(value: String) {
         self.init()
-        self.id = self.lastId()
+        self.id = self.newId()
         self.value = value
     }
 
@@ -67,7 +67,7 @@ class Task: Object {
 
 
     // taskの最新idを取得する
-    func lastId() -> Int {
+    func newId() -> Int {
         if let last = Task.realm.objects(Task.self).last {
             return last.id + 1
         }
