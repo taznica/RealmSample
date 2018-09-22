@@ -39,6 +39,26 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+
+    // taskを追加する
+    func addTask(value: String) {
+        let task = Task(value: value)
+        task.add()
+    }
+
+
+    // taskを更新する
+    func updateTask(value: String) {
+        task.update(task: task, value: value)
+    }
+
+
+    // リスト画面に遷移する
+    func goToListView() {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+
     // 追加(更新)ボタンをタップしたときの動作を設定する
     @IBAction func didSelectButton() {
 
@@ -69,23 +89,6 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         // リスト画面に遷移する
         self.goToListView()
     }
-
-    // taskを追加する
-    func addTask(value: String) {
-        let task = Task(value: value)
-        task.add()
-    }
-
-    // taskを更新する
-    func updateTask(value: String) {
-        task.update(task: task, value: value)
-    }
-
-    // リスト画面に遷移する
-    func goToListView() {
-        self.navigationController?.popViewController(animated: true)
-    }
-
 
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

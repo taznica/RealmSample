@@ -41,6 +41,49 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
 
+    // 画面遷移時の設定をする
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addViewController = segue.destination as! AddViewController
+
+        // 追加か更新かで遷移時の処理を分ける
+        switch segue.identifier {
+        case "add":
+            addViewController.viewType = .add
+
+        case "update":
+            // タップされたセルのデータを取得し更新画面に受け渡す
+            let tasks = self.task.readAll()
+            let task = tasks[(table.indexPathForSelectedRow?.row)!]
+
+            addViewController.viewType = .update
+            addViewController.task = task
+
+        default:
+            break
+        }
+    }
+
+
+    // 追加画面に遷移する
+    func goToAddView() {
+        self.performSegue(withIdentifier: "add", sender: nil)
+    }
+
+
+    // 更新画面に遷移する
+    func goToUpdateView() {
+        self.performSegue(withIdentifier: "update", sender: nil)
+    }
+
+
+    // 追加ボタンをタップしたときの動作を設定する
+    @IBAction func didSelectAddButton() {
+
+        // 追加画面に遷移する
+        self.goToAddView()
+    }
+
+
     // TableViewのセル数を設定する
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
@@ -90,48 +133,5 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         // 更新画面に遷移する
         self.goToUpdateView()
-    }
-
-
-    // 画面遷移時の設定をする
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let addViewController = segue.destination as! AddViewController
-
-        // 追加か更新かで遷移時の処理を分ける
-        switch segue.identifier {
-            case "add":
-                addViewController.viewType = .add
-            
-            case "update":
-                // タップされたセルのデータを取得し更新画面に受け渡す
-                let tasks = self.task.readAll()
-                let task = tasks[(table.indexPathForSelectedRow?.row)!]
-                
-                addViewController.viewType = .update
-                addViewController.task = task
-            
-            default:
-                break
-        }
-    }
-
-
-    // 追加画面に遷移する
-    func goToAddView() {
-        self.performSegue(withIdentifier: "add", sender: nil)
-    }
-
-
-    // 更新画面に遷移する
-    func goToUpdateView() {
-        self.performSegue(withIdentifier: "update", sender: nil)
-    }
-
-
-    // 追加ボタンをタップしたときの動作を設定する
-    @IBAction func didSelectAddButton() {
-
-        // 追加画面に遷移する
-        self.goToAddView()
     }
 }
