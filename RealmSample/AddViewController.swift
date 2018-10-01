@@ -111,14 +111,18 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         self.goToListView()
     }
 
-
+    
+    // キーボードのReturnキーでキーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        // textFieldからフォーカスを外しキーボードを閉じる
         textField.resignFirstResponder()
 
         return true
     }
 
 
+    //画面がタップされたらキーボードを閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if(textField.isFirstResponder) {
             textField.resignFirstResponder()
