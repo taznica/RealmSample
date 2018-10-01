@@ -30,7 +30,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
-                                    <action selector="didSelectButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="GtS-e3-Das"/>
+                                    <action selector="didSelectAddButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="WMS-iT-Khi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,7 +84,7 @@
                     <navigationItem key="navigationItem" title="Tasks" id="NCH-I9-Tz5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="x7B-QB-cN7">
                             <connections>
-                                <action selector="didSelectAddButton" destination="8wO-eL-be3" id="PmR-wL-e8X"/>
+                                <action selector="didSelectPlusButton" destination="8wO-eL-be3" id="hh0-3b-ZV3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

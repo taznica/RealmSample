@@ -60,7 +60,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
 
 
     // 追加(更新)ボタンをタップしたときの動作を設定する
-    @IBAction func didSelectButton() {
+    @IBAction func didSelectAddButton() {
 
         // textFieldが空の場合は何も行わない
         guard let value = textField.text else {

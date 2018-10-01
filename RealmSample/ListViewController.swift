@@ -76,8 +76,8 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
 
-    // 追加ボタンをタップしたときの動作を設定する
-    @IBAction func didSelectAddButton() {
+    // 追加(+)ボタンをタップしたときの動作を設定する
+    @IBAction func didSelectPlusButton() {
 
         // 追加画面に遷移する
         self.goToAddView()

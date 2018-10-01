@@ -133,11 +133,11 @@
 			children = (
 				8709AFD220EDB7240054AD34 /* AppDelegate.swift */,
 				8709AFD420EDB7240054AD34 /* ListViewController.swift */,
+				87347A2C21007D7800E8B9D5 /* AddViewController.swift */,
 				8709AFD620EDB7240054AD34 /* Main.storyboard */,
 				8709AFD920EDB7250054AD34 /* Assets.xcassets */,
 				8709AFDB20EDB7250054AD34 /* LaunchScreen.storyboard */,
 				8709AFDE20EDB7250054AD34 /* Info.plist */,
-				87347A2C21007D7800E8B9D5 /* AddViewController.swift */,
 				D53F70A95CB6082EC3D24059 /* Task.swift */,
 			);
 			path = RealmSample;
