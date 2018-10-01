@@ -57,13 +57,34 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     func goToListView() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    // textFieldが未入力の際にアラートを表示する
+    func presentAlert() {
+        
+        // アラートのコントローラ
+        let alertController = UIAlertController(title: "The name of your task is empty.", message: "Please input the name of your task.", preferredStyle: .alert)
+        
+        // OKボタン
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        // アラートにOKボタンを追加する
+        alertController.addAction(okAction)
+        
+        // アラートを表示する
+        present(alertController, animated: true, completion: nil)
+    }
 
 
     // 追加(更新)ボタンをタップしたときの動作を設定する
     @IBAction func didSelectAddButton() {
 
-        // textFieldが空の場合は何も行わない
-        guard let value = textField.text else {
+        // textFieldが空の場合はアラートを表示する
+        guard let value = textField.text, !value.isEmpty else {
+            
+            // アラートを表示する
+            presentAlert()
+            
             return
         }
 
