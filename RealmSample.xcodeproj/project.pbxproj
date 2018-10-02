@@ -243,6 +243,7 @@
 				TargetAttributes = {
 					8709AFCE20EDB7240054AD34 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					8709AFE220EDB7250054AD34 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -569,7 +570,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttsutchi.RealmSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -588,7 +589,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttsutchi.RealmSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
