@@ -35,6 +35,7 @@ class Task: Object {
         })
     }
 
+
     // taskを全件取得する
     func readAll() -> [Task] {
         let tasks = Task.realm.objects(Task.self).sorted(byKeyPath: "id", ascending: true)

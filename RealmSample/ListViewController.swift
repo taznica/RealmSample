@@ -52,7 +52,6 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         case "update":
             // タップされたセルのデータを取得し更新画面に受け渡す
-            let tasks = self.task.readAll()
             let task = tasks[(table.indexPathForSelectedRow?.row)!]
 
             addViewController.viewType = .update
@@ -113,7 +112,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let delete: UITableViewRowAction = UITableViewRowAction(style: .destructive, title: "delete", handler: {(action, indexPath) in
 
             // スワイプされたセルのtaskを取得する
-            let task: Task = Task.realm.objects(Task.self)[indexPath.row]
+            let task = self.tasks[indexPath.row]
 
             // taskを削除する
             try! Task.realm.write {
