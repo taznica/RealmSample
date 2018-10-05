@@ -2,6 +2,8 @@
 
 Realmを使用したiOS用タスク管理アプリのサンプルプロジェクトです。
 
+[English](https://github.com/ttsutchi/RealmSample/blob/master/README-jp.md)
+
 
 ## ライセンス
 
