@@ -2,7 +2,7 @@
 
 Sample project of task manager app using Realm for iOS.
 
-[日本語](https://github.com/ttsutchi/RealmSample/blob/master/README.md)
+[日本語](https://github.com/ttsutchi/RealmSample/blob/master/README-jp.md)
 
 
 ## License
