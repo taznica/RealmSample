@@ -85,7 +85,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         
         // アラートを表示する
         // Display the alert.
-        present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
 
 
@@ -99,7 +99,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             
             // アラートを表示する
             // Display alert.
-            presentAlert()
+            self.presentAlert()
             
             return
         }
